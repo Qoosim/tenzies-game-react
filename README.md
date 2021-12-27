@@ -5,5 +5,5 @@
 ![screenshot]()
 
 ## Live Demo
-[Live Demo] :point_left:
+[Live Demo]() :point_left:
 
