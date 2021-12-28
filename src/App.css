@@ -2,3 +2,70 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 38%;
+  height: 500px;
+  margin: 50px auto;
+  background: #0B2434;
+  display: grid;
+  place-items: center;
+}
+
+.box_container {
+  width: 92%;
+  height: 90%;
+  background: #F5F5F5;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+}
+
+.game-title {
+  margin-bottom: -65px;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #2B283A;
+}
+
+.content {
+  width: 70%;
+  margin: 0 auto -50px auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.1072px;
+  line-height: 20px;
+  color: #4A4E74;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.boxes {
+  padding: 0 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(2, 50px);
+}
+
+[class^="box-"] {
+  font-size: 30px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-roll {
+  margin-top: -30px;
+  display: inline;
+  font-size: 1.3rem;
+  padding: 8px 25px;
+  background: #5035FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
