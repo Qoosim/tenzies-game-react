@@ -2,6 +2,23 @@ import React from 'react'
 import Die from './components/Die'
 
 function App() {
+
+  const [dice, setDice] = React.useState(allNewDice());
+
+  const diceNumber = dice.map(die => 
+    <Die 
+      value={die} 
+    />
+  ) 
+
+  function allNewDice() {
+    const newDice = [];
+    for (let i = 0; i < 10; i++) {
+      newDice.push(Math.ceil(Math.random() * 6));
+    }
+    return newDice;
+  }
+
   return (
     <main className="container">
       <div className="box_container">
@@ -11,16 +28,7 @@ function App() {
           it at its current value between rolls.
         </p>
         <div className="boxes">
-          <Die number={1} />
-          <Die number={5} />
-          <Die number={1} />
-          <Die number={3} />
-          <Die number={1} />
-          <Die number={2} />
-          <Die number={1} />
-          <Die number={4} />
-          <Die number={6} />
-          <Die number={1} />
+          {diceNumber}
         </div>
         <button className="btn-roll">Roll</button>
       </div>
