@@ -6,16 +6,28 @@ function App() {
 
   const [dice, setDice] = React.useState(allNewDice());
 
-  function allNewDice() {
-    const newDice = [];
-    for (let i = 0; i < 10; i++) {
-      newDice.push({ 
+  function generateNewDice() {
+    return { 
         value: Math.ceil(Math.random() * 6),
         isHeld: false,
         id: nanoid()
-      })
+      }
+  }
+
+  function allNewDice() {
+    const newDice = [];
+    for (let i = 0; i < 10; i++) {
+      newDice.push(generateNewDice())
     }
     return newDice;
+  }
+
+  function rollDice() {
+    setDice(oldDice => {
+      return oldDice.map(die => {
+        return die.isHeld ? die : generateNewDice();
+      })
+    });
   }
 
   function holdDice(id) {
@@ -48,7 +60,7 @@ function App() {
         </div>
         <button 
           className="roll-btn"
-          onClick={() => setDice(allNewDice())}
+          onClick={rollDice}
         >
           Roll
         </button>
