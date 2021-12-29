@@ -1,4 +1,5 @@
 import React from 'react'
+import Die from './components/Die'
 
 function App() {
   return (
@@ -10,16 +11,16 @@ function App() {
           it at its current value between rolls.
         </p>
         <div className="boxes">
-          <div className="box-1">1</div>
-          <div className="box-2">2</div>
-          <div className="box-3">1</div>
-          <div className="box-4">4</div>
-          <div className="box-5">5</div>
-          <div className="box-6">3</div>
-          <div className="box-7">3</div>
-          <div className="box-8">5</div>
-          <div className="box-9">6</div>
-          <div className="box-10">1</div>
+          <Die number={1} />
+          <Die number={5} />
+          <Die number={1} />
+          <Die number={3} />
+          <Die number={1} />
+          <Die number={2} />
+          <Die number={1} />
+          <Die number={4} />
+          <Die number={6} />
+          <Die number={1} />
         </div>
         <button className="btn-roll">Roll</button>
       </div>
