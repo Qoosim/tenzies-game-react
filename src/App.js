@@ -5,7 +5,7 @@ function App() {
 
   const [dice, setDice] = React.useState(allNewDice());
 
-  const diceNumber = dice.map(die => 
+  const diceElements = dice.map(die => 
     <Die 
       value={die} 
     />
@@ -28,9 +28,14 @@ function App() {
           it at its current value between rolls.
         </p>
         <div className="boxes">
-          {diceNumber}
+          {diceElements}
         </div>
-        <button className="btn-roll">Roll</button>
+        <button 
+          className="roll-btn"
+          onClick={() => setDice(allNewDice())}
+        >
+          Roll
+        </button>
       </div>
     </main>
   );

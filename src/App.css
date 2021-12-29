@@ -77,8 +77,8 @@
   font-size: 1.5rem;
 }
 
-.btn-roll {
-  margin-top: -30px;
+.roll-btn {
+  margin-top: -40px;
   display: inline;
   font-size: 1.3rem;
   padding: 8px 25px;
@@ -88,3 +88,12 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.roll-btn:focus {
+  outline: none;
+}
+
+.roll-btn:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
