@@ -1,6 +1,7 @@
 import React from 'react'
 import Die from './components/Die'
 import {nanoid} from 'nanoid'
+import Confetti from 'react-confetti'
 
 function App() {
 
@@ -35,11 +36,16 @@ function App() {
   }
 
   function rollDice() {
-    setDice(oldDice => {
-      return oldDice.map(die => {
-        return die.isHeld ? die : generateNewDice();
-      })
-    });
+    if (!tenzies) {
+      setDice(oldDice => {
+        return oldDice.map(die => {
+          return die.isHeld ? die : generateNewDice();
+        })
+      });
+    } else {
+      setTenzies(false)
+      setDice(allNewDice())
+    }
   }
 
   function holdDice(id) {
@@ -61,6 +67,7 @@ function App() {
 
   return (
     <main className="container">
+      {tenzies && <Confetti />}
       <div className="box_container">
         <h1 className="game-title">Tenzies</h1>
         <p className="content">
@@ -74,7 +81,7 @@ function App() {
           className="roll-btn"
           onClick={rollDice}
         >
-          Roll
+          {tenzies ? 'New Game' : 'Roll'}
         </button>
       </div>
     </main>
