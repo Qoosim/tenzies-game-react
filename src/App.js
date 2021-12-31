@@ -65,24 +65,22 @@ function App() {
   )) 
 
   return (
-    <main className="container">
+    <main>
       {tenzies && <Confetti />}
-      <div className="box_container">
-        <h1 className="game-title">Tenzies</h1>
-        <p className="content">
-          Roll until all dice are the same. Click each die to freeze 
-          it at its current value between rolls.
-        </p>
-        <div className="boxes">
-          {diceElements}
-        </div>
-        <button 
-          className="roll-btn"
-          onClick={rollDice}
-        >
-          {tenzies ? 'New Game' : 'Roll'}
-        </button>
+      <h1 className="game-title">Tenzies</h1>
+      <p className="content">
+        Roll until all dice are the same. Click each die to freeze 
+        it at its current value between rolls.
+      </p>
+      <div className="container">
+        {diceElements}
       </div>
+      <button 
+        className="roll-btn"
+        onClick={rollDice}
+      >
+      {tenzies ? 'New Game' : 'Roll'}
+      </button>
     </main>
   );
 }
